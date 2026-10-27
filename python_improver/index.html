@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d14">
+
+    <meta name="description"
+          content="Explore Python programs, improve code readability, and build better coding habits with improve_code_AS by Ansh.">
+
+    <title>improve_code_AS | Crafted by Ansh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="background-effects" aria-hidden="true">
+        <div class="bg-orb orb-one"></div>
+        <div class="bg-orb orb-two"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo" aria-label="improve_code_AS home">
+            <span class="logo-icon">&lt;/&gt;</span>
+            <span>improve_code<span class="accent-text">_AS</span></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#programs">Programs</a>
+            <a href="#editor">Code Lab</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle light and dark theme"
+            title="Toggle theme">
+            🌙
+        </button>
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero section-container" id="home">
+
+            <div class="hero-content">
+
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span>PYTHON PROGRAM COLLECTION</span>
+                </div>
+
+                <p class="hero-eyebrow">THINK · CODE · IMPROVE</p>
+
+                <h1>
+                    Write Better Code.<br>
+                    <span class="gradient-text">Think Like a Developer.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A collection of useful Python programs, clean coding examples,
+                    and simple tools to help you understand code and improve
+                    your programming workflow.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#programs" class="btn btn-primary">
+                        Explore Programs
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="#editor" class="btn btn-secondary">
+                        Open Code Lab
+                        <span aria-hidden="true">⌘</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">04</span>
+                        <span class="stat-label">Code Examples</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat-item">
+                        <span class="stat-number">PY</span>
+                        <span class="stat-label">Python Collection</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat-item">
+                        <span class="stat-number">AS</span>
+                        <span class="stat-label">By Ansh</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Animated Cobra Illustration -->
+            <div class="hero-visual">
+
+                <div class="visual-glow"></div>
+
+                <div class="snake-container" aria-label="Animated coding cobra">
+
+                    <div class="snake-glow"></div>
+
+                    <div class="snake">
+
+                        <div class="snake-hood">
+                            <div class="hood-pattern"></div>
+                        </div>
+
+                        <div class="snake-head">
+                            <div class="snake-eye eye-left">
+                                <span></span>
+                            </div>
+
+                            <div class="snake-eye eye-right">
+                                <span></span>
+                            </div>
+
+                            <div class="snake-nose"></div>
+                            <div class="snake-mouth"></div>
+                            <div class="snake-tongue"></div>
+                        </div>
+
+                        <div class="snake-body">
+                            <span class="snake-scale scale-one"></span>
+                            <span class="snake-scale scale-two"></span>
+                            <span class="snake-scale scale-three"></span>
+                            <span class="snake-scale scale-four"></span>
+                            <span class="snake-scale scale-five"></span>
+                        </div>
+
+                        <div class="snake-tail"></div>
+
+                    </div>
+
+                    <div class="floating-code code-one">
+                        <span class="code-purple">def</span> improve():
+                    </div>
+
+                    <div class="floating-code code-two">
+                        <span class="code-green">return</span> success
+                    </div>
+
+                    <div class="floating-code code-three">
+                        <span class="code-orange">print</span>("Hello, Ansh!")
+                    </div>
+
+                    <div class="floating-symbol symbol-one">{ }</div>
+                    <div class="floating-symbol symbol-two">&lt;/&gt;</div>
+
+                    <div class="snake-caption">
+                        <span class="caption-dot"></span>
+                        <span>BUILT TO IMPROVE</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Programs Section -->
+        <section class="programs-section section-container" id="programs">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-eyebrow">THE COLLECTION</p>
+                    <h2>Explore <span class="gradient-text">Programs.</span></h2>
+                    <p class="section-description">
+                        Select a program to load its code into the Code Lab.
+                    </p>
+                </div>
+
+                <span class="section-index">01 / 03</span>
+            </div>
+
+
+            <div class="program-grid">
+
+                <!-- Factorial -->
+                <article class="program-card">
+                    <div class="card-top">
+                        <div class="program-icon icon-purple">∑</div>
+                        <span class="card-tag">MATH</span>
+                    </div>
+
+                    <h3>Factorial Calculator</h3>
+
+                    <p>
+                        Calculate the factorial of a number using loops
+                        and understand the basic logic.
+                    </p>
+
+                    <div class="card-meta">
+                        <span>Python</span>
+                        <span>•</span>
+                        <span>Beginner</span>
+                    </div>
+
+                    <button
+                        class="card-action"
+                        type="button"
+                        data-example="factorial">
+                        Explore Code <span>→</span>
+                    </button>
+                </article>
+
+
+                <!-- Fibonacci -->
+                <article class="program-card">
+                    <div class="card-top">
+                        <div class="program-icon icon-green">∞</div>
+                        <span class="card-tag">SEQUENCES</span>
+                    </div>
+
+                    <h3>Fibonacci Series</h3>
+
+                    <p>
+                        Generate the Fibonacci sequence and explore
+                        how each term depends on previous terms.
+                    </p>
+
+                    <div class="card-meta">
+                        <span>Python</span>
+                        <span>•</span>
+                        <span>Beginner</span>
+                    </div>
+
+                    <button
+                        class="card-action"
+                        type="button"
+                        data-example="fibonacci">
+                        Explore Code <span>→</span>
+                    </button>
+                </article>
+
+
+                <!-- Structure to Dictionary -->
+                <article class="program-card">
+                    <div class="card-top">
+                        <div class="program-icon icon-orange">{ }</div>
+                        <span class="card-tag">DATA</span>
+                    </div>
+
+                    <h3>Structure to Dictionary</h3>
+
+                    <p>
+                        Represent structured student information as a
+                        Python dictionary using a dataclass.
+                    </p>
+
+                    <div class="card-meta">
+                        <span>Python</span>
+                        <span>•</span>
+                        <span>Intermediate</span>
+                    </div>
+
+                    <button
+                        class="card-action"
+                        type="button"
+                        data-example="structure">
+                        Explore Code <span>→</span>
+                    </button>
+                </article>
+
+
+                <!-- Clean Code -->
+                <article class="program-card">
+                    <div class="card-top">
+                        <div class="program-icon icon-blue">&lt;/&gt;</div>
+                        <span class="card-tag">BEST PRACTICES</span>
+                    </div>
+
+                    <h3>Clean Code Example</h3>
+
+                    <p>
+                        Learn functions, readable variables, basic
+                        validation, and formatted output.
+                    </p>
+
+                    <div class="card-meta">
+                        <span>Python</span>
+                        <span>•</span>
+                        <span>Best Practices</span>
+                    </div>
+
+                    <button
+                        class="card-action"
+                        type="button"
+                        data-example="clean">
+                        Explore Code <span>→</span>
+                    </button>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Code Editor Section -->
+        <section class="editor-section section-container" id="editor">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-eyebrow">YOUR PLAYGROUND</p>
+                    <h2>The <span class="gradient-text">Code Lab.</span></h2>
+
+                    <p class="section-description">
+                        Write, clean, copy, and download your Python code.
+                    </p>
+                </div>
+
+                <span class="section-index">02 / 03</span>
+            </div>
+
+
+            <div class="editor-layout">
+
+                <!-- Input Editor -->
+                <div class="editor-panel">
+
+                    <div class="editor-header">
+                        <div class="editor-title">
+                            <div class="window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span>main.py</span>
+                        </div>
+
+                        <span class="editor-language">PYTHON</span>
+                    </div>
+
+
+                    <div class="editor-toolbar">
+                        <span class="toolbar-label">SOURCE CODE</span>
+
+                        <div class="toolbar-actions">
+                            <button
+                                type="button"
+                                class="mini-btn"
+                                id="copyBtn"
+                                title="Copy source code">
+                                Copy
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mini-btn danger-btn"
+                                id="clearBtn"
+                                title="Clear editor">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <label class="sr-only" for="codeInput">
+                        Enter Python source code
+                    </label>
+
+                    <textarea
+                        id="codeInput"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                        autocorrect="off"
+                        placeholder="# Start writing your Python code here...
+
+def hello():
+    print('Hello, Ansh!')"
+                    ></textarea>
+
+
+                    <div class="editor-footer">
+                        <span>
+                            <span class="footer-status-dot"></span>
+                            Editor Ready
+                        </span>
+
+                        <span>UTF-8 · Python</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Output Editor -->
+                <div class="editor-panel output-panel">
+
+                    <div class="editor-header">
+                        <div class="editor-title">
+                            <div class="output-icon">✦</div>
+                            <span>improved_code.py</span>
+                        </div>
+
+                        <span class="editor-language output-language">
+                            OUTPUT
+                        </span>
+                    </div>
+
+
+                    <div class="editor-toolbar">
+                        <span class="toolbar-label">CLEANED CODE</span>
+
+                        <div class="toolbar-actions">
+                            <button
+                                type="button"
+                                class="mini-btn"
+                                id="copyOutput"
+                                title="Copy cleaned code">
+                                Copy
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mini-btn"
+                                id="downloadBtn"
+                                title="Download Python file">
+                                Download ↓
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <label class="sr-only" for="output">
+                        Cleaned Python code output
+                    </label>
+
+                    <textarea
+                        id="output"
+                        spellcheck="false"
+                        readonly
+                        placeholder="# Your cleaned code will appear here...
+
+Select a program or enter your own code."
+                    ></textarea>
+
+
+                    <div class="editor-footer">
+                        <span>
+                            <span class="footer-status-dot"></span>
+                            Output Panel
+                        </span>
+
+                        <span>Ready to export</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="editor-controls">
+                <p class="editor-hint">
+                    <span>✦</span>
+                    Removes trailing spaces and excess blank lines.
+                    Does not execute Python code.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary improve-btn"
+                    id="improveBtn">
+                    <span>✧</span>
+                    Improve Code
+                    <span class="button-arrow">→</span>
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about-section section-container" id="about">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-eyebrow">BEHIND THE CODE</p>
+                    <h2>Meet the <span class="gradient-text">Developer.</span></h2>
+                </div>
+
+                <span class="section-index">03 / 03</span>
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-avatar">
+                    <span>A</span>
+                    <div class="avatar-ring"></div>
+                </div>
+
+                <div class="about-content">
+                    <span class="developer-label">
+                        <span class="status-dot"></span>
+                        DEVELOPER
+                    </span>
+
+                    <h3>Ansh <span class="accent-text">Soni</span></h3>
+
+                    <p class="about-role">
+                        Computer Science Student · Full-Stack Developer in Progress
+                    </p>
+
+                    <p class="about-description">
+                        I built improve_code_AS as a place to collect Python
+                        examples, practise programming, and make code easier
+                        to explore. This project is part of my journey to
+                        become a better developer, one line at a time.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="about-decoration" aria-hidden="true">
+                    {<br>
+                    &nbsp;&nbsp;&lt;/&gt;<br>
+                    }
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <a href="#home" class="logo footer-logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span>improve_code<span class="accent-text">_AS</span></span>
+            </a>
+
+            <p class="footer-credit">
+                Designed with <span class="heart">♥</span> by
+                <strong>Ansh</strong>
+            </p>
+
+            <p class="footer-copyright">
+                © <span id="currentYear">2026</span> improve_code_AS
+            </p>
+
+        </div>
+
+        <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+    <div
+        id="as-toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- No Python engine or initialization required -->
+    <script src="script.js"></script>
+
+</body>
+</html>
