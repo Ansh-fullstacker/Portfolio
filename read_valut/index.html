@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="ReadVault is your personal reading space. Organize books, track reading progress, and build better reading habits.">
+
+    <meta name="theme-color" content="#0b0b12">
+
+    <title>ReadVault — Your Personal Reading Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <!-- Application -->
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="#" class="brand" aria-label="ReadVault home">
+                <span class="brand-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </span>
+
+                <span class="brand-name">
+                    Read<span>Vault</span>
+                </span>
+            </a>
+
+            <div class="sidebar-section">
+                <p class="sidebar-label">WORKSPACE</p>
+
+                <nav class="sidebar-nav" aria-label="Main navigation">
+
+                    <button class="nav-item active" data-view="all">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>My Library</span>
+                        <span class="nav-count" id="nav-total">0</span>
+                    </button>
+
+                    <button class="nav-item" data-view="reading">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span>Currently Reading</span>
+                    </button>
+
+                    <button class="nav-item" data-view="completed">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Completed</span>
+                    </button>
+
+                    <button class="nav-item" data-view="want-to-read">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <span>Want to Read</span>
+                    </button>
+
+                </nav>
+            </div>
+
+            <!-- Reading Goal -->
+            <div class="goal-card">
+
+                <div class="goal-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <p class="goal-title">Your Reading Goal</p>
+
+                <div class="goal-number">
+                    <span id="goal-completed">0</span>
+                    <span class="goal-divider">/</span>
+                    <span id="goal-target">12</span>
+                    <span class="goal-unit">books</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="goal-progress"></div>
+                </div>
+
+                <p class="goal-caption" id="goal-caption">
+                    Every page counts. Keep going!
+                </p>
+
+                <button class="goal-edit" id="edit-goal-btn">
+                    <i class="fa-solid fa-sliders"></i>
+                    Adjust goal
+                </button>
+
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <div class="developer-avatar">A</div>
+
+                <div class="developer-info">
+                    <p class="developer-name">Ansh</p>
+                    <p class="developer-role">Your reading space</p>
+                </div>
+
+                <span class="online-indicator" aria-label="Application ready"></span>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <button class="icon-button mobile-menu-btn"
+                    id="mobile-menu-btn"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="breadcrumb">
+                    <span>Workspace</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span class="breadcrumb-current" id="breadcrumb-title">
+                        My Library
+                    </span>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="Search your library..."
+                            aria-label="Search books">
+
+                        <kbd>⌘ K</kbd>
+                    </div>
+
+                    <button class="icon-button" id="theme-toggle"
+                        aria-label="Toggle theme"
+                        title="Toggle theme">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+
+                    <button class="profile-button" id="profile-button"
+                        aria-label="About the developer"
+                        title="About ReadVault">
+                        A
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+
+                    <div class="welcome-copy">
+                        <p class="eyebrow">
+                            <span class="eyebrow-dot"></span>
+                            YOUR PERSONAL LIBRARY
+                        </p>
+
+                        <h1 id="welcome-heading">
+                            Every book opens<br>
+                            <span>a new world.</span>
+                        </h1>
+
+                        <p class="welcome-description">
+                            Your next great read is waiting.
+                            Keep your books organized and your curiosity alive.
+                        </p>
+                    </div>
+
+                    <button class="primary-button" id="add-book-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add a Book</span>
+                    </button>
+
+                </section>
+
+                <!-- Statistics -->
+                <section class="stats-grid" aria-label="Reading statistics">
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Total Books</span>
+
+                            <span class="stat-icon purple-icon">
+                                <i class="fa-solid fa-book"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-value" id="stat-total">0</div>
+
+                        <p class="stat-description">
+                            Books in your library
+                        </p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Currently Reading</span>
+
+                            <span class="stat-icon blue-icon">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-value" id="stat-reading">0</div>
+
+                        <p class="stat-description">
+                            Stories in progress
+                        </p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Completed</span>
+
+                            <span class="stat-icon green-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-value" id="stat-completed">0</div>
+
+                        <p class="stat-description">
+                            Adventures finished
+                        </p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Want to Read</span>
+
+                            <span class="stat-icon orange-icon">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-value" id="stat-want">0</div>
+
+                        <p class="stat-description">
+                            Waiting on your shelf
+                        </p>
+                    </article>
+
+                </section>
+
+                <!-- Library Section -->
+                <section class="library-section" id="library-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <p class="eyebrow">YOUR COLLECTION</p>
+
+                            <h2 id="section-title">
+                                Your Library
+                                <span class="heading-count" id="section-count">0</span>
+                            </h2>
+
+                            <p class="section-description" id="section-description">
+                                All your favourite stories, in one place.
+                            </p>
+                        </div>
+
+                        <div class="view-switcher" aria-label="Change layout">
+
+                            <button class="view-button active"
+                                data-layout="grid"
+                                aria-label="Grid view"
+                                title="Grid view">
+                                <i class="fa-solid fa-grip"></i>
+                            </button>
+
+                            <button class="view-button"
+                                data-layout="list"
+                                aria-label="List view"
+                                title="List view">
+                                <i class="fa-solid fa-list"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="filter-row">
+
+                        <div class="filter-tabs" aria-label="Filter books">
+
+                            <button class="filter-tab active" data-filter="all">
+                                All Books
+                            </button>
+
+                            <button class="filter-tab" data-filter="want-to-read">
+                                To Read
+                            </button>
+
+                            <button class="filter-tab" data-filter="reading">
+                                Reading
+                            </button>
+
+                            <button class="filter-tab" data-filter="completed">
+                                Completed
+                            </button>
+
+                        </div>
+
+                        <label class="sort-control">
+                            <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                            <select id="sort-select" aria-label="Sort books">
+                                <option value="recent">Recently Added</option>
+                                <option value="title">Title A–Z</option>
+                                <option value="author">Author A–Z</option>
+                                <option value="progress">Reading Progress</option>
+                            </select>
+                        </label>
+
+                    </div>
+
+                    <!-- Book Collection -->
+                    <div class="book-grid" id="book-grid" aria-live="polite">
+                        <!-- Book cards will be rendered by JavaScript -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-state hidden" id="empty-state">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <h3 id="empty-title">Your library is waiting.</h3>
+
+                        <p id="empty-description">
+                            Add your first book and start building your collection.
+                        </p>
+
+                        <button class="primary-button" id="empty-add-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Your First Book
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- Footer -->
+                <footer class="app-footer">
+
+                    <p>
+                        Made with <span class="footer-heart">♥</span>
+                        and a love for books.
+                    </p>
+
+                    <p>
+                        <span class="footer-brand">ReadVault</span>
+                        <span class="footer-separator">·</span>
+                        Designed & Developed by Ansh
+                    </p>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Add / Edit Book Modal -->
+    <div class="modal-backdrop hidden" id="book-modal-backdrop">
+
+        <section class="book-modal"
+            id="book-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="eyebrow">BUILD YOUR COLLECTION</p>
+                    <h2 id="modal-title">Add a new book</h2>
+                    <p class="modal-subtitle">
+                        Every great journey starts with a page.
+                    </p>
+                </div>
+
+                <button class="icon-button" id="close-modal-btn"
+                    aria-label="Close dialog">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <form id="book-form">
+
+                <input type="hidden" id="book-id">
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+                        <label for="book-title">
+                            Book Title <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="book-title"
+                            name="title"
+                            placeholder="e.g. Atomic Habits"
+                            maxlength="120"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-author">
+                            Author <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="book-author"
+                            name="author"
+                            placeholder="e.g. James Clear"
+                            maxlength="100"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-category">Category</label>
+
+                        <select id="book-category" name="category">
+                            <option value="Personal Growth">Personal Growth</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Business">Business</option>
+                            <option value="Psychology">Psychology</option>
+                            <option value="Biography">Biography</option>
+                            <option value="Science">Science</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-status">Reading Status</label>
+
+                        <select id="book-status" name="status">
+                            <option value="want-to-read">Want to Read</option>
+                            <option value="reading">Currently Reading</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-pages">Total Pages</label>
+
+                        <input
+                            type="number"
+                            id="book-pages"
+                            name="pages"
+                            placeholder="e.g. 320"
+                            min="1"
+                            max="100000">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="book-cover">Cover Image URL</label>
+
+                        <input
+                            type="url"
+                            id="book-cover"
+                            name="cover"
+                            placeholder="https://example.com/book-cover.jpg">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="book-description">Short Description</label>
+
+                        <textarea
+                            id="book-description"
+                            name="description"
+                            placeholder="What is this book about?"
+                            rows="3"
+                            maxlength="500"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button type="button"
+                        class="secondary-button"
+                        id="cancel-modal-btn">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                        class="primary-button"
+                        id="save-book-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Save Book
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- Reading Progress Modal -->
+    <div class="modal-backdrop hidden" id="progress-modal-backdrop">
+
+        <section class="book-modal progress-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="progress-modal-title">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="eyebrow">YOUR READING JOURNEY</p>
+                    <h2 id="progress-modal-title">Update progress</h2>
+                    <p class="modal-subtitle" id="progress-book-name"></p>
+                </div>
+
+                <button class="icon-button" id="close-progress-modal-btn"
+                    aria-label="Close dialog">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <form id="progress-form">
+
+                <input type="hidden" id="progress-book-id">
+
+                <div class="form-group">
+                    <label for="progress-pages">Pages Read</label>
+
+                    <input
+                        type="number"
+                        id="progress-pages"
+                        min="0"
+                        required>
+                </div>
+
+                <div class="progress-preview">
+                    <div class="progress-preview-top">
+                        <span>Reading progress</span>
+                        <strong id="progress-percentage">0%</strong>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-preview-fill"></div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+
+                    <button type="button"
+                        class="secondary-button"
+                        id="cancel-progress-btn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-button">
+                        Save Progress
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- Notification Container -->
+    <div class="toast-container"
+        id="toast-container"
+        aria-live="polite"
+        aria-atomic="false">
+    </div>
+
+</body>
+
+</html>
+```
