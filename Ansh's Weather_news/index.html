@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- PREMIUM WEATHER DASHBOARD -->
+    <section id="weather-app" class="wx-app">
+    <div class="wx-orb wx-orb-one"></div>
+    <div class="wx-orb wx-orb-two"></div>
+  
+    <header class="wx-header">
+      <a class="wx-brand" href="#">
+        <span class="wx-brand-icon">✳</span>
+        <span>Ansh's<span class="wx-brand-light">Weather News</span></span>
+      </a>
+      <span class="wx-live"><i></i> LIVE WEATHER</span>
+    </header>
+  
+    <div class="wx-intro">
+      <p class="wx-eyebrow">KNOW WEATHER OF YOUR WORLD WITH ANSH'S WEATHER NEWS, IN REAL TIME</p>
+      <h1>Feel the <span>atmosphere with Ansh</span></h1>
+      <p class="wx-subtitle">
+        A little closer to the sky. Discover the weather around your world.
+      </p>
+    </div>
+  
+    <form id="wx-search" class="wx-search">
+      <span class="wx-search-icon">⌕</span>
+      <input id="wx-city" type="text"
+        placeholder="Search any city — Jaipur, Tokyo..."
+        value="Jaipur" autocomplete="off" />
+      <button type="submit" id="wx-search-btn">Explore <span>↗</span></button>
+    </form>
+  
+    <p id="wx-status" class="wx-status" aria-live="polite">
+      Connecting to the atmosphere...
+    </p>
+  
+    <div id="wx-content" class="wx-content" hidden>
+      <article class="wx-hero">
+        <div class="wx-hero-top">
+          <div>
+            <p class="wx-label">CURRENT CONDITIONS</p>
+            <h2 id="wx-location">Jaipur, IN</h2>
+            <p id="wx-date" class="wx-muted"></p>
+          </div>
+          <span id="wx-condition-pill" class="wx-pill">LIVE</span>
+        </div>
+  
+        <div class="wx-main-weather">
+          <div class="wx-temperature">
+            <span id="wx-temp">--</span><sup>°C</sup>
+          </div>
+          <div class="wx-condition">
+            <img id="wx-icon" src="" alt="Weather icon" />
+            <h3 id="wx-description">Loading...</h3>
+            <p class="wx-muted">Feels like <span id="wx-feels">--</span>°</p>
+          </div>
+        </div>
+  
+        <div class="wx-high-low">
+          <span>↗ High <b id="wx-high">--°</b></span>
+          <span>↘ Low <b id="wx-low">--°</b></span>
+          <span>◉ <b id="wx-humidity-short">--%</b> humidity</span>
+        </div>
+      </article>
+  
+      <div class="wx-stats">
+        <article class="wx-stat">
+          <div class="wx-stat-top"><span>Feels like</span><span>◉</span></div>
+          <strong><span id="wx-feels-stat">--</span><small>°C</small></strong>
+          <p>Perceived temperature</p>
+        </article>
+        <article class="wx-stat">
+          <div class="wx-stat-top"><span>Humidity</span><span>≋</span></div>
+          <strong><span id="wx-humidity">--</span><small>%</small></strong>
+          <div class="wx-meter"><i id="wx-humidity-bar"></i></div>
+          <p>Moisture in the air</p>
+        </article>
+        <article class="wx-stat">
+          <div class="wx-stat-top"><span>Wind speed</span><span>↗</span></div>
+          <strong><span id="wx-wind">--</span><small> m/s</small></strong>
+          <p id="wx-wind-direction">Air movement</p>
+        </article>
+        <article class="wx-stat">
+          <div class="wx-stat-top"><span>Pressure</span><span>⌁</span></div>
+          <strong><span id="wx-pressure">--</span><small> hPa</small></strong>
+          <p>Atmospheric pressure</p>
+        </article>
+        <article class="wx-stat">
+          <div class="wx-stat-top"><span>Visibility</span><span>◎</span></div>
+          <strong><span id="wx-visibility">--</span><small> km</small></strong>
+          <p>Distance through the air</p>
+        </article>
+        <article class="wx-stat">
+          <div class="wx-stat-top"><span>Cloud cover</span><span>☁</span></div>
+          <strong><span id="wx-clouds">--</span><small>%</small></strong>
+          <p>Sky coverage</p>
+        </article>
+      </div>
+  
+      <section class="wx-panel">
+        <div class="wx-section-heading">
+          <div>
+            <p class="wx-label">THE NEXT HOURS</p>
+            <h3>Hourly forecast</h3>
+          </div>
+          <span class="wx-heading-note">3-hour intervals</span>
+        </div>
+        <div id="wx-hourly" class="wx-hourly"></div>
+      </section>
+  
+      <section class="wx-panel">
+        <div class="wx-section-heading">
+          <div>
+            <p class="wx-label">PLAN AHEAD</p>
+            <h3>5-day forecast</h3>
+          </div>
+          <span class="wx-heading-note">Upcoming weather</span>
+        </div>
+        <div id="wx-forecast" class="wx-forecast"></div>
+      </section>
+  
+      <div class="wx-sun-grid">
+        <article class="wx-sun-card">
+          <div class="wx-sun-symbol">☀</div>
+          <div><p>Sunrise</p><strong id="wx-sunrise">--:--</strong></div>
+          <span>↗</span>
+        </article>
+        <article class="wx-sun-card">
+          <div class="wx-sunset-symbol">◒</div>
+          <div><p>Sunset</p><strong id="wx-sunset">--:--</strong></div>
+          <span>↘</span>
+        </article>
+      </div>
+  
+      <footer class="wx-footer">
+        <span>✳ MADE FOR WEATHER LOVERS</span>
+        <span>POWERED BY OPENWEATHER</span>
+      </footer>
+      </div>
+      </section>
+      <script src="script.js"></script>
+</body>
+</html>
